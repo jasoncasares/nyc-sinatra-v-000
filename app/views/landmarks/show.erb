@@ -1,10 +1,9 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Year Completed</th>
-  </tr>
-  <tr>
-    <td><%= @landmark.name %></td>
-    <td><%= @landmark.year_completed %></td>
-  </tr>
-<table>
+<% unless locals.empty? %>
+  <%= message %>
+<% end %>
+<h1><strong style="color: green">Landmark</strong>: <%= @landmark.name %></h1>
+<p>Year Completed: <%=@landmark.year_completed%></p>
+<% if @landmark.figure_id != nil %>
+<h3><strong style="color: red">Figure</strong>: <%= @landmark.figure.name %></h3>
+<% end %>
+<a href="/landmarks/<%=@landmark.id%>/edit">Edit Me</a>

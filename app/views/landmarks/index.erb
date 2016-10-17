@@ -1,0 +1,10 @@
+<h1><strong style="color: green">Landmarks</strong></h1>
+<% Landmark.all.each do |landmark| %>
+  <p><strong style="color: green">Landmark</strong> Name: <%=landmark.name%></p>
+  <p>Year completed: <%=landmark.year_completed%></p>
+  <%if landmark.figure_id != nil%>
+  <p><strong style="color: red">Figure</strong> Name: <%=landmark.figure.name%></p>
+  <%end%>
+  <a href="/landmarks/<%=landmark.id%>">Show Landmark</a>
+  <br/>
+<% end %>
